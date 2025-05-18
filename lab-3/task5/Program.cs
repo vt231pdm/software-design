@@ -22,6 +22,9 @@ namespace task5
 			var li3 = new LightElementNode("li", DisplayType.Block, TagClosingType.Pair);
 			li3.AddChild(new LightTextNode("Third item"));
 
+			var clickListener = new ClickListener("Logger");
+			li2.AddEventListener("click", clickListener);
+
 			ul.AddChild(li1);
 			ul.AddChild(li2);
 			ul.AddChild(li3);
@@ -32,7 +35,11 @@ namespace task5
 			Console.WriteLine("\n=== OuterHTML ===");
 			Console.WriteLine(ul.OuterHTML);
 
+			Console.WriteLine("\n=== Trigger click on second item ===");
+			li2.TriggerEvent("click");
+
 			Console.ReadLine();
 		}
+
 	}
 }
