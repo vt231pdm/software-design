@@ -13,26 +13,35 @@ namespace task5
 			var ul = new LightElementNode("ul", DisplayType.Block, TagClosingType.Pair);
 			ul.AddClass("fancy-list");
 
-			var li1 = new LightElementNode("li", DisplayType.Block, TagClosingType.Pair);
-			li1.AddChild(new LightTextNode("First item"));
+			ul.AddChild(new LightElementNode("li", DisplayType.Block, TagClosingType.Pair)
+			{
+				Children = { new LightTextNode("First item") }
+			});
 
-			var li2 = new LightElementNode("li", DisplayType.Block, TagClosingType.Pair);
-			li2.AddChild(new LightTextNode("Second item"));
+			ul.AddChild(new LightElementNode("li", DisplayType.Block, TagClosingType.Pair)
+			{
+				Children = { new LightTextNode("Second item") }
+			});
 
-			var li3 = new LightElementNode("li", DisplayType.Block, TagClosingType.Pair);
-			li3.AddChild(new LightTextNode("Third item"));
+			ul.AddChild(new LightElementNode("li", DisplayType.Block, TagClosingType.Pair)
+			{
+				Children = { new LightTextNode("Third item") }
+			});
 
-			ul.AddChild(li1);
-			ul.AddChild(li2);
-			ul.AddChild(li3);
+			var fileImage = new ImageElementNode("C:/images/photo.png", new FileImageLoader());
+			var webImage = new ImageElementNode("https://example.com/image.jpg", new WebImageLoader());
 
-			Console.WriteLine("=== InnerHTML ===");
-			Console.WriteLine(ul.InnerHTML);
+			var div = new LightElementNode("div", DisplayType.Block, TagClosingType.Pair);
+			div.AddClass("container");
+			div.AddChild(ul);
+			div.AddChild(fileImage);
+			div.AddChild(webImage);
 
-			Console.WriteLine("\n=== OuterHTML ===");
-			Console.WriteLine(ul.OuterHTML);
+			Console.WriteLine("=== OuterHTML ===");
+			Console.WriteLine(div.OuterHTML);
 
 			Console.ReadLine();
 		}
+
 	}
 }
