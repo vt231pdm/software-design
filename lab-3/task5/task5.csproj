@@ -43,11 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileImageLoader.cs" />
+    <Compile Include="IImageLoader.cs" />
+    <Compile Include="ImageElementNode.cs" />
     <Compile Include="LightElementNode.cs" />
     <Compile Include="LightNode.cs" />
     <Compile Include="LightTextNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebImageLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
